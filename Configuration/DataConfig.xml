@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Enviroment>
+    <!-- Timeout -->
+    <Timeout>5</Timeout>
+
+<!--     General -->
+<!--    <platformName>api</platformName>-->
+
+    <!-- Authorization -->
+    <UserName>standard_user</UserName>
+    <Password>secret_sauce</Password>
+
+    <!-- Web -->
+<!--    <platformName>web</platformName>-->
+    <BrowserName>chrome</BrowserName>
+    <URL>https://www.saucedemo.com/</URL>
+    <ImageRepo>C:\Automation\Projects\FinalProject\ImageRepository\</ImageRepo>
+
+    <!-- Data Driven Testing -->
+    <DDTFile>./DDTFiles/users.csv</DDTFile>
+
+    <!-- Mobile -->
+<!--    <platformName>mobile</platformName>-->
+    <UDID>R5CX22GX5GF</UDID>
+    <AppPackage>com.wighthat.MetricConversion</AppPackage>
+    <AppActivity>.SplashActivity</AppActivity>
+    <AppiumServer>http://localhost:4723/wd/hub</AppiumServer>
+
+    <!-- API -->
+    <urlAPI>http://localhost:9000/</urlAPI>
+
+    <!-- Electron -->
+    <ElectronDriverPath>./Drivers/electrondriver.exe</ElectronDriverPath>
+    <ElectronAppPath>C:\Users\Oren\AppData\Local\Programs\todolist\Todolist.exe</ElectronAppPath>
+
+    <!-- DeskTop -->
+    <CalculatorApp>Microsoft.WindowsCalculator_8wekyb3d8bbwe!App</CalculatorApp>
+    <AppiumServerDesktop>http://127.0.0.1:4723</AppiumServerDesktop>
+
+    <!-- Database -->
+<!--    <DBURL>jdbc:mysql://remotemysql.com:3306/sql7737286</DBURL>-->
+    <DBURL>jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7738630</DBURL>
+    <DBUserName>sql7738630</DBUserName>
+    <DBPassword>xxVBFdYE7k</DBPassword>
+
+</Enviroment>

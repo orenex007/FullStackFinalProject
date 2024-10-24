@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Web Suite" parallel="false">
+    <test name="Web Tests">
+        <parameter name="PlatformName" value="web"></parameter>
+<!--        <packages>-->
+<!--            <package name="sanity"></package>-->
+<!--        </packages>-->
+        <classes>
+            <class name="sanity.TestSwagLabsWeb">
+<!--                <methods>-->
+<!--                    <include name="test01VerifyCheckAddAndCancel"></include>-->
+<!--                    <include name="test02VerifyCheckAddAndBuy"></include>-->
+<!--                    <exclude name="test03VerifyAbout"></exclude>-->
+<!--                </methods>-->
+            </class>
+<!--            <class name="sanity.SwagLabsWebDB"></class>-->
+<!--            <class name="sanity.StudentsAPI"></class>-->
+        </classes>
+    </test>
+</suite>
