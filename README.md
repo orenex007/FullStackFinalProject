@@ -36,7 +36,7 @@ The project is an example of infrastructure for automation testing of different 
 ### _List of applications were used in this project:_
 * [Swag Labs](https://www.saucedemo.com/) - Web based e-commerce site
 * Metric Conversions - Mobile application
-* [students.jar](http://localhost:9000/student/list/) - Test API(need download for it)
+* [Students.jar](http://localhost:9000/student/list/) - Test API(need download for it)
 * Electron application - Todolist App application
 * Desktop application - Windows calculator 
 
