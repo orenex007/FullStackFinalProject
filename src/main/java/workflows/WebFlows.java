@@ -212,6 +212,15 @@ public class WebFlows extends CommonOps {
         UIActions.updateText(swagLabsLogin.txt_password, cred.get(1));
         UIActions.click(swagLabsLogin.btn_login);
     }
-
+//
+    @Step("Business Flow: Login to SwagLabs with DB Credentials")
+    public static void checkoutYourInformationDB(){
+        String query = "SELECT firstName, lastName, zip FROM Clients WHERE id='4'";
+        List<String> cred = DBActions.getCredentialsTwo(query);
+        UIActions.updateText(swagLabsCheckStepOnePage.txt_firstName, cred.get(0));
+        UIActions.updateText(swagLabsCheckStepOnePage.txt_lastName, cred.get(1));
+        UIActions.updateText(swagLabsCheckStepOnePage.txt_zipCode, cred.get(2));
+        UIActions.click(swagLabsCheckStepOnePage.btn_continue);
+    }
 
 }

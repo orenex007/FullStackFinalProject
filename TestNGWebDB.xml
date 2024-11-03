@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Web Suite" parallel="false">
+    <test name="Web Tests">
+        <parameter name="PlatformName" value="web"></parameter>
+        <classes>
+            <class name="sanity.TestSwagLabsWebDB">
+            </class>
+        </classes>
+    </test>
+</suite>

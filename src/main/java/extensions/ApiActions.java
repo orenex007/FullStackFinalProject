@@ -20,14 +20,14 @@ public class ApiActions extends CommonOps {
 
     @Step("Post Data to Server")
     public static void post(JSONObject params, String resource){
-        httpRequest.header("Content-Type", "application/json");
+//        httpRequest.header("Content-Type", "application/json");
         httpRequest.body(params.toJSONString());
         response = httpRequest.post(resource);
         response.prettyPrint();
     }
     @Step("Update Data to Server")
     public static void put(JSONObject params, String resource){
-        httpRequest.header("Content-Type", "application/json");
+//        httpRequest.header("Content-Type", "application/json");
         httpRequest.body(params.toJSONString());
         response = httpRequest.put(resource);
         response.prettyPrint();

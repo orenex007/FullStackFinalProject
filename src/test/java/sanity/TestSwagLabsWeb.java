@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 @Listeners(utilities.Listeners.class)
 public class TestSwagLabsWeb extends CommonOps {
-    final String expectedgetLoginLogo = "Swag Labs";
+    final String expectedGetLoginLogo = "Swag Labs";
     final String expectedHeaderAllPages = "Swag Labs";
     final String expectedSuccess = "";
     final String expectedLockedOut = "Epic sadface: Sorry, this user has been locked out.";
@@ -30,7 +30,7 @@ public class TestSwagLabsWeb extends CommonOps {
     @Test(description = "Test01 - Verify Check Add And Cancel")
     @Description("This Test Add All Carts And Cancel All Carts")
     public void test01VerifyCheckAddAndCancel(){
-        Verifications.verifyLogoLogin(swagLabsLogin.getLoginLog(), expectedgetLoginLogo);
+        Verifications.verifyLogoLogin(swagLabsLogin.getLoginLog(), expectedGetLoginLogo);
         WebFlows.login(USERNAME, PASSWORD);
         Verifications.verifyHeaderInAllPages(swagLabsMainPage.getAppLogoInAllPages(), expectedHeaderAllPages);
         Verifications.verifyAllTitle(swagLabsMainPage.allTitle, "Products");
@@ -51,7 +51,7 @@ public class TestSwagLabsWeb extends CommonOps {
     @Test(description = "Test02 - Verify Check Buying")
     @Description("This Test Add && Remove A Few Carts And Buy")
     public void test02VerifyCheckAddAndBuy() throws InterruptedException {
-        Verifications.verifyLogoLogin(swagLabsLogin.getLoginLog(), expectedgetLoginLogo);
+        Verifications.verifyLogoLogin(swagLabsLogin.getLoginLog(), expectedGetLoginLogo);
         WebFlows.login(USERNAME, PASSWORD);
         Verifications.verifyHeaderInAllPages(swagLabsMainPage.getAppLogoInAllPages(), expectedHeaderAllPages);
         Verifications.verifyAllTitle(swagLabsMainPage.allTitle, "Products");
@@ -86,7 +86,7 @@ public class TestSwagLabsWeb extends CommonOps {
     @Test(description = "Test03 - Verify About Saucelabs")
     @Description("This Test Enter Login And Move From Main Page To About Page, Then Back To Main Page")
     public void test03VerifyAbout(){
-        Verifications.verifyLogoLogin(swagLabsLogin.getLoginLog(), expectedgetLoginLogo);
+        Verifications.verifyLogoLogin(swagLabsLogin.getLoginLog(), expectedGetLoginLogo);
         WebFlows.login("visual_user", PASSWORD);
         Verifications.verifyHeaderInAllPages(swagLabsMainPage.getAppLogoInAllPages(), expectedHeaderAllPages);
         UIActions.click(swagLabsMainPage.btn_menu);
@@ -99,7 +99,7 @@ public class TestSwagLabsWeb extends CommonOps {
     @Test(description = "Test04 - Verify Enter All Social Media")
     @Description("This Test Enter All Social Media from Swag Labs Website")
     public void test04VerifySocialMedia(){
-        Verifications.verifyLogoLogin(swagLabsLogin.getLoginLog(), expectedgetLoginLogo);
+        Verifications.verifyLogoLogin(swagLabsLogin.getLoginLog(), expectedGetLoginLogo);
         WebFlows.login("error_user", PASSWORD);
         Verifications.verifyHeaderInAllPages(swagLabsMainPage.getAppLogoInAllPages(), expectedHeaderAllPages);
         UIActions.scrollDown();
@@ -116,7 +116,7 @@ public class TestSwagLabsWeb extends CommonOps {
     @Test(description = "Test05 - Verify Use All Usernames For Login", dataProvider = "data-provider-users", dataProviderClass = utilities.ManageDDT.class)
     @Description("This Test All Usernames Login In A LoginPage")
     public void test05VerifyCheckLogin(String user, String pass){
-        Verifications.verifyLogoLogin(swagLabsLogin.getLoginLog(), expectedgetLoginLogo);
+        Verifications.verifyLogoLogin(swagLabsLogin.getLoginLog(), expectedGetLoginLogo);
         WebFlows.loginAndLogout(user, pass);
         String actualLogin = swagLabsLogin.actualLogin.getText();
         if (actualLogin.equals(expectedLockedOut)){

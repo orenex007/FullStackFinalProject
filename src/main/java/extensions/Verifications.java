@@ -1,11 +1,13 @@
 package extensions;
 
+import io.appium.java_client.MobileElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.sikuli.script.FindFailed;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 import utilities.CommonOps;
 
 import java.util.List;
@@ -86,10 +88,14 @@ public class Verifications extends CommonOps {
 //         Assert.assertEquals(elem.getText(), expected);
 //    }
 
-    @Step("Verify Element Check Weight from KG to LBS")
-    public static void expectWeightAnswer(WebElement elem, String expected){
+    @Step("Verify Element Check expects the answers")
+    public static void expectAnswer(MobileElement elem, String expected){
         soft.assertEquals(elem.getText(), expected);
     }
+
+
+
+
     //======================== Verifications SOFT ASSERT ALL INCLUDE WEB AND MOBILE ========================
     @Step("Verify Expectations(Soft-Assertion-Assert-All")
     public static void verifyExpectationsALL(){
@@ -112,6 +118,10 @@ public class Verifications extends CommonOps {
         wait.until(ExpectedConditions.visibilityOf(elem));
         Assert.assertEquals(elem.getText(), expected);
     }
-
+    @Step("Verify Text In Element With Soft If There Are A Few Times Of Verifications")
+    public static void verifyTextInElementWithSoft(WebElement elem, String expected){
+        wait.until(ExpectedConditions.visibilityOf(elem));
+        soft.assertEquals(elem.getText(), expected);
+    }
 
 }

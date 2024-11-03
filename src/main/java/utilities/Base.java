@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.sikuli.script.Screen;
 import org.testng.asserts.SoftAssert;
 
+import java.awt.*;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -42,6 +43,9 @@ public class Base {
     protected static Connection con;
     protected static Statement stmt;
     protected static ResultSet rs;
+
+    //Desktop
+    protected static Robot robot;
 
     //Pages Objects - Web
     protected static pageObjects.swagLabs.LoginPage swagLabsLogin;

@@ -7,6 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import utilities.CommonOps;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
+
 public class UIActions extends CommonOps {
     @Step("Click on Element")
     public static void click(WebElement elem){
@@ -107,6 +110,84 @@ public class UIActions extends CommonOps {
     @Step("Insert Key")
     public static void insertKey(WebElement elem, Keys value){
         elem.sendKeys(value);
+    }
+
+    //======================== UIAction For Desktop ========================
+    @Step("Insert Key Without WebElement(for Desktop apps)")
+    public static void insertKeyWithoutWebElement(Keys key) {
+        try {
+            switch (key) {
+                case NUMPAD1:
+                    robot.keyPress(KeyEvent.VK_NUMPAD1);
+                    robot.keyRelease(KeyEvent.VK_NUMPAD1);
+                    break;
+                case NUMPAD2:
+                    robot.keyPress(KeyEvent.VK_NUMPAD2);
+                    robot.keyRelease(KeyEvent.VK_NUMPAD2);
+                    break;
+                    case NUMPAD3:
+                    robot.keyPress(KeyEvent.VK_NUMPAD3);
+                    robot.keyRelease(KeyEvent.VK_NUMPAD3);
+                    break;
+                    case NUMPAD4:
+                    robot.keyPress(KeyEvent.VK_NUMPAD4);
+                    robot.keyRelease(KeyEvent.VK_NUMPAD4);
+                    break;
+                    case NUMPAD5:
+                    robot.keyPress(KeyEvent.VK_NUMPAD5);
+                    robot.keyRelease(KeyEvent.VK_NUMPAD5);
+                    break;
+                    case NUMPAD6:
+                    robot.keyPress(KeyEvent.VK_NUMPAD6);
+                    robot.keyRelease(KeyEvent.VK_NUMPAD6);
+                    break;
+                    case NUMPAD7:
+                    robot.keyPress(KeyEvent.VK_NUMPAD7);
+                    robot.keyRelease(KeyEvent.VK_NUMPAD7);
+                    break;
+                    case NUMPAD8:
+                    robot.keyPress(KeyEvent.VK_NUMPAD8);
+                    robot.keyRelease(KeyEvent.VK_NUMPAD8);
+                    break;
+                    case NUMPAD9:
+                    robot.keyPress(KeyEvent.VK_NUMPAD9);
+                    robot.keyRelease(KeyEvent.VK_NUMPAD9);
+                    break;
+                    case NUMPAD0:
+                    robot.keyPress(KeyEvent.VK_NUMPAD0);
+                    robot.keyRelease(KeyEvent.VK_NUMPAD0);
+                    break;
+                case BACK_SPACE:
+                    robot.keyPress(KeyEvent.VK_BACK_SPACE);
+                    robot.keyRelease(KeyEvent.VK_BACK_SPACE);
+                    break;
+                case MULTIPLY:
+                    robot.keyPress(KeyEvent.VK_MULTIPLY);
+                    robot.keyRelease(KeyEvent.VK_MULTIPLY);
+                    break;
+                case ADD:
+                    robot.keyPress(KeyEvent.VK_ADD);
+                    robot.keyRelease(KeyEvent.VK_ADD);
+                    break;
+                case DIVIDE:
+                    robot.keyPress(KeyEvent.VK_DIVIDE);
+                    robot.keyRelease(KeyEvent.VK_DIVIDE);
+                    break;
+                case SUBTRACT:
+                    robot.keyPress(KeyEvent.VK_SUBTRACT);
+                    robot.keyRelease(KeyEvent.VK_SUBTRACT);
+                    break;
+                case ENTER:
+                    robot.keyPress(KeyEvent.VK_ENTER);
+                    robot.keyRelease(KeyEvent.VK_ENTER);
+                    break;
+                // Add more cases as needed
+                default:
+                    throw new UnsupportedOperationException("Key not supported: " + key);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

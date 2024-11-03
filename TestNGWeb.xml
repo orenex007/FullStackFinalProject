@@ -14,8 +14,8 @@
 <!--                    <exclude name="test03VerifyAbout"></exclude>-->
 <!--                </methods>-->
             </class>
-<!--            <class name="sanity.SwagLabsWebDB"></class>-->
-<!--            <class name="sanity.StudentsAPI"></class>-->
+<!--            <class name="sanity.TestSwagLabsWebDB"></class>-->
+<!--            <class name="sanity.TestStudentsAPI"></class>-->
         </classes>
     </test>
 </suite>

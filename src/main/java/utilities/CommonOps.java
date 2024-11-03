@@ -26,6 +26,7 @@ import workflows.WebFlows;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import java.awt.*;
 import java.io.File;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
@@ -132,12 +133,13 @@ public class CommonOps extends Base {
         ManagePages.initMetric();
         mobileDriver.manage().timeouts().implicitlyWait(Long.parseLong(getData("Timeout")), TimeUnit.SECONDS);
         wait = new WebDriverWait(mobileDriver, Long.parseLong(getData("Timeout")));
-        action = new Actions(driver);
+//        action = new Actions(driver);
     }
 
     public static void initAPI() {
         RestAssured.baseURI = getData("urlAPI");
         httpRequest = RestAssured.given();
+        httpRequest.header("Content-Type", "application/json");
 //        httpRequest = RestAssured.given().auth().preemptive().basic("admin", "admin");
     }
     public static void initElectron() {
@@ -160,6 +162,13 @@ public class CommonOps extends Base {
 //            throw new RuntimeException(e);
             System.out.println("Can not Connect to Appium Server, See Details: " + e);
         }
+        try {
+            robot = new Robot();
+        } catch (AWTException e) {
+//            throw new RuntimeException(e);
+            System.out.println("Can not Connect to Appium Server, See Details: " + e);
+
+        }
         ManagePages.initCalculator();
         driver.manage().timeouts().implicitlyWait(Long.parseLong(getData("Timeout")), TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, Long.parseLong(getData("Timeout")));
@@ -176,6 +185,7 @@ public class CommonOps extends Base {
             action = new Actions(driver);
         } else if (platform.equalsIgnoreCase("mobile")) {
             initMobile();
+            action = new Actions(mobileDriver);
         } else if (platform.equalsIgnoreCase("api")) {
             initAPI();
         } else if (platform.equalsIgnoreCase("electron")) {

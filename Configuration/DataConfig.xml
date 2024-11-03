@@ -39,8 +39,8 @@
 
     <!-- Database -->
 <!--    <DBURL>jdbc:mysql://remotemysql.com:3306/sql7737286</DBURL>-->
-    <DBURL>jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7738630</DBURL>
-    <DBUserName>sql7738630</DBUserName>
-    <DBPassword>xxVBFdYE7k</DBPassword>
+    <DBURL>jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7742041</DBURL>
+    <DBUserName>sql7742041</DBUserName>
+    <DBPassword>aU3iw4EJXd</DBPassword>
 
 </Enviroment>

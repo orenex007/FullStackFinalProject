@@ -13,7 +13,7 @@ public class LoginPage {
     public WebElement btn_login;
     @FindBy(className = "bm-burger-button")
     public WebElement btn_menu;
-    @FindBy(id = "logout_sidebar_link")
+    @FindBy(xpath = "//*[@id='logout_sidebar_link']")
     public WebElement btn_loginOut;
     @FindBy(xpath = "//*[@id=\"login_button_container\"]/div/form/div[3]")
     public WebElement actualLogin;
