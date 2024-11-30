@@ -223,6 +223,9 @@ public class CommonOps extends Base {
         else if (platform.equalsIgnoreCase("electron")) {
             ElectronFlows.emptyList();
         }
+        else if (platform.equalsIgnoreCase("mobile")){
+            mobileDriver.resetApp();
+        }
     }
 
     @AfterClass
