@@ -10,7 +10,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import utilities.CommonOps;
+import utilities.ManageDB;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class WebFlows extends CommonOps {
@@ -205,22 +207,46 @@ public class WebFlows extends CommonOps {
     }
 //        ================== Database ==================
     @Step("Business Flow: Login to SwagLabs with DB Credentials")
-    public static void loginDB(){
-        String query = "SELECT name, password FROM Employees WHERE id='3'";
-        List<String> cred = DBActions.getCredentials(query);
-        UIActions.updateText(swagLabsLogin.txt_username, cred.get(0));
-        UIActions.updateText(swagLabsLogin.txt_password, cred.get(1));
+    public static void loginDB() throws SQLException {
+        rs = ManageDB.getTableData();
+//        String query = "SELECT name, password FROM Employees WHERE id='3'";
+//        List<String> cred = DBActions.getCredentials(query);
+        String userName = rs.getString(1);
+        String password = rs.getString(2);
+        UIActions.updateText(swagLabsLogin.txt_username, userName);
+        UIActions.updateText(swagLabsLogin.txt_password, password);
         UIActions.click(swagLabsLogin.btn_login);
     }
+//    @Step("Business Flow: Login to SwagLabs with DB Credentials")
+//    public static void loginDB(){
+//        String query = "SELECT name, password FROM Employees WHERE id='3'";
+//        List<String> cred = DBActions.getCredentials(query);
+//        UIActions.updateText(swagLabsLogin.txt_username, cred.get(0));
+//        UIActions.updateText(swagLabsLogin.txt_password, cred.get(1));
+//        UIActions.click(swagLabsLogin.btn_login);
+//    }
 //
-    @Step("Business Flow: Login to SwagLabs with DB Credentials")
-    public static void checkoutYourInformationDB(){
-        String query = "SELECT firstName, lastName, zip FROM Clients WHERE id='4'";
-        List<String> cred = DBActions.getCredentialsTwo(query);
-        UIActions.updateText(swagLabsCheckStepOnePage.txt_firstName, cred.get(0));
-        UIActions.updateText(swagLabsCheckStepOnePage.txt_lastName, cred.get(1));
-        UIActions.updateText(swagLabsCheckStepOnePage.txt_zipCode, cred.get(2));
+    @Step("Business Flow: Fill 'Your Information' in the SwagLabs with DB Credentials")
+    public static void checkoutYourInformationDB() throws SQLException {
+        rs = ManageDB.getTableData2();
+//        String query = "SELECT firstName, lastName, zip FROM Clients WHERE id='4'";
+//        List<String> cred = DBActions.getCredentialsTwo(query);
+        String firstName = rs.getString(1);
+        String lastName = rs.getString(2);
+        String zip = rs.getString(3);
+        UIActions.updateText(swagLabsCheckStepOnePage.txt_firstName, firstName);
+        UIActions.updateText(swagLabsCheckStepOnePage.txt_lastName, lastName);
+        UIActions.updateText(swagLabsCheckStepOnePage.txt_zipCode, zip);
         UIActions.click(swagLabsCheckStepOnePage.btn_continue);
     }
+//    @Step("Business Flow: Fill 'Your Information' in the SwagLabs with DB Credentials")
+//    public static void checkoutYourInformationDB(){
+//        String query = "SELECT firstName, lastName, zip FROM Clients WHERE id='4'";
+//        List<String> cred = DBActions.getCredentialsTwo(query);
+//        UIActions.updateText(swagLabsCheckStepOnePage.txt_firstName, cred.get(0));
+//        UIActions.updateText(swagLabsCheckStepOnePage.txt_lastName, cred.get(1));
+//        UIActions.updateText(swagLabsCheckStepOnePage.txt_zipCode, cred.get(2));
+//        UIActions.click(swagLabsCheckStepOnePage.btn_continue);
+//    }
 
 }

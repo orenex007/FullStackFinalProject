@@ -39,8 +39,13 @@
 
     <!-- Database -->
 <!--    <DBURL>jdbc:mysql://remotemysql.com:3306/sql7737286</DBURL>-->
-    <DBURL>jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12748812</DBURL>
-    <DBUserName>sql12748812</DBUserName>
-    <DBPassword>FTxvLsHTbc</DBPassword>
+<!--    <DBURL>jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12748812</DBURL>-->
+<!--    <DBURL>jdbc:mysql://sql12.freesqldatabase.com:3306/sql12762172</DBURL>-->
+<!--    <DBUserName>sql12762172</DBUserName>-->
+<!--    <DBPassword>JVvUVfi6wD</DBPassword>-->
+    <DBURL>jdbc:sqlite:</DBURL>
+    <DBPATH>Configuration/DataConfig.db</DBPATH>
+<!--    <FULLDBURL>jdbc:sqlite:Configuration/DataConfig.db</FULLDBURL>-->
+    <!--    public static String dbUrl = "jdbc:sqlite:" + dbPath;-->
 
 </Enviroment>

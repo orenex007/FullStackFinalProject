@@ -31,6 +31,7 @@ import java.io.File;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.concurrent.TimeUnit;
 
 public class CommonOps extends Base {
@@ -176,7 +177,7 @@ public class CommonOps extends Base {
 
     @BeforeClass
     @Parameters({"PlatformName"})
-    public void startSession(String PlatformName) {
+    public void startSession(String PlatformName) throws SQLException {
 //        String platform = PlatformName; //from first class from ATIDCOLLEGE
 //        if (platform.equalsIgnoreCase("web")) {} before charge String from getData("platformName"))
         platform = PlatformName;
@@ -199,7 +200,9 @@ public class CommonOps extends Base {
         soft = new SoftAssert();
         screen = new Screen();
 //        action = new Actions(driver);
-        ManageDB.openConnection(getData("DBURL"), getData("DBUserName"), getData("DBPassword"));
+//        ManageDB.openConnection(getData("DBURL"), getData("DBUserName"), getData("DBPassword"));
+        ManageDB.openConnection(getData("DBURL"), getData("DBPATH"));
+//        public static String dbUrl = "jdbc:sqlite:" + getData("DBPATH");
     }
 
     @BeforeMethod

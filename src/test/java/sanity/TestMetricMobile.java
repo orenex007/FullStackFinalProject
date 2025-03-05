@@ -29,11 +29,11 @@ public class TestMetricMobile extends CommonOps {
     public void test01VerifyMetricWeight() {
         MobileFlows.metricConversionsToWeight();
         MobileFlows.metricWeightKGAndLBS(textSearchWeight);
-        Verifications.expectAnswer(metricMain.textAnswer, expectedTextWeightKG);
+        Verifications.expectAnswer(metricMain.getTextAnswer(), expectedTextWeightKG);
         MobileFlows.convertWeight(String.valueOf(fillTextWeightKG));
-        Verifications.expectAnswer(metricMain.textAnswer, expectedTextWeightKGAfterConvert);
+        Verifications.expectAnswer(metricMain.getTextAnswer(), expectedTextWeightKGAfterConvert);
         MobileFlows.moveToHistory();
-        Verifications.expectAnswer(metricMain.history_row_text, "Kilograms to Pounds");
+        Verifications.expectAnswer(metricMain.getHistory_row_text(), "Kilograms to Pounds");
         MobileFlows.DeleteAndBack();
         Verifications.verifyExpectationsALL();
     }
@@ -42,15 +42,15 @@ public class TestMetricMobile extends CommonOps {
     public void test02VerifyMetricLength() {
         MobileFlows.metricConversionsToLength();
         MobileFlows.metricLengthCMAndFEET(textSearchLength);
-        Verifications.expectAnswer(metricMain.textAnswer, expectedTextLength);
+        Verifications.expectAnswer(metricMain.getTextAnswer(), expectedTextLength);
         MobileFlows.optionsForLength();
-        Verifications.expectAnswer(metricMain.textAnswer, expectedTextLengthWithDecimalAndFour);
+        Verifications.expectAnswer(metricMain.getTextAnswer(), expectedTextLengthWithDecimalAndFour);
         MobileFlows.convertLength(String.valueOf(fillTextLengthCM));
-        Verifications.expectAnswer(metricMain.textAnswer, expectedLengthCentimeters);
+        Verifications.expectAnswer(metricMain.getTextAnswer(), expectedLengthCentimeters);
         MobileFlows.optionsForLengthToOrigin();
-        Verifications.expectAnswer(metricMain.textAnswer,expectedLengthCentimetersFromOrigin);
+        Verifications.expectAnswer(metricMain.getTextAnswer(),expectedLengthCentimetersFromOrigin);
         MobileFlows.moveToHistory();
-        Verifications.expectAnswer(metricMain.history_row_text, "Centimeters to Feet");
+        Verifications.expectAnswer(metricMain.getHistory_row_text(), "Centimeters to Feet");
         MobileFlows.DeleteAndBack();
         Verifications.verifyExpectationsALL();
     }
