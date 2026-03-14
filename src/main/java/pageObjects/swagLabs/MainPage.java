@@ -58,7 +58,7 @@ public class MainPage{
     public WebElement toSocialTwitter;
     @FindBy(css = "a[data-test='social-facebook']")
     public WebElement toSocialFacebook;
-    @FindBy(css ="div[class='x92rtbv x10l6tqk x1tk7jg1 x1vjfegm']")
+    @FindBy(css ="div[aria-label='Close']")
     public WebElement btn_close_facebook;
 
     @FindBy(css = "a[data-test='social-linkedin']")

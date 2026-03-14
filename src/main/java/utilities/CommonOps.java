@@ -87,7 +87,9 @@ public class CommonOps extends Base {
 
     public static WebDriver initChromeDriver() {
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--incognito");
+        WebDriver driver = new ChromeDriver(options);
         return driver;
     }
 

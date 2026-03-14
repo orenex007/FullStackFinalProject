@@ -7,15 +7,12 @@ import java.sql.SQLException;
 
 public class ManageDB extends CommonOps{
 
-//    public static String fullDBPATH = "Configuration/DataConfig.db" ;
-//    public static String fullDBUrl = "jdbc:sqlite:" + fullDBPATH ;
+
     public static void openConnection(String fullDBURL, String fullDBPath){
-//        dbUrl = fullDBUrl;
-//        dbPath = fullDBPATH;
+
         try {
 //            Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(fullDBURL + fullDBPath);
-//            public static String dbUrl = "jdbc:sqlite:" + dbPath;
             stmt = con.createStatement();
         } catch (Exception e) {
 //            throw new RuntimeException(e);

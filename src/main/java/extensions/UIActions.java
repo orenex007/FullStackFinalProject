@@ -11,6 +11,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public class UIActions extends CommonOps {
+
     @Step("Click on Element")
     public static void click(WebElement elem){
         wait.until(ExpectedConditions.elementToBeClickable(elem));
@@ -98,7 +99,7 @@ public class UIActions extends CommonOps {
 //    @Step("Key ESCAPE in the keyboard")
 //    public static void actionKeysESCAPE() {
 //        action.sendKeys(Keys.ESCAPE).perform();
-//    }
+//    }z
 
 
     //======================== UIAction For Electron ========================

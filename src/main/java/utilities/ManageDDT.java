@@ -12,7 +12,7 @@ import java.nio.file.Files;
 import java.util.List;
 
 public class ManageDDT extends CommonOps {
-//    public static
+
     @DataProvider(name = "data-provider-users")
     public Object[][] getDataObject(){
         return getDataFromCSV(getData("DDTFile"));
